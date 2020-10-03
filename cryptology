@@ -1,0 +1,20 @@
+!pip install python-constraint
+from constraint import *
+p1 = problem()
+
+p1.addVariables(['A','B','C'], [1,2,3])
+or
+p1.addvariable('A', [1,2,3])
+p1.addvariable('B', [1,2,3])
+p1.addvariable('C', [1,2,3])
+
+
+def constraint_1(a,b,c):
+	if a<b and b<c :
+		return True
+
+p1.addConstraint(constraint_1, ['A', 'B', 'C'])
+
+p1.getSolution()
+
+p1.getSolutions()
